@@ -5,15 +5,12 @@
 function renderLicenseBadge(license) {
   const licenses = { 
     MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-    Apache: '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
+    Apache: '[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
     GPL: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
-    BSD: '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
+    BSD: '[![License: BSD](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
     None: ''
-  };
-  if (!license) {
-    return '';
-  }
-  return licenses[license];
+  }; 
+  return licenses[license] || '';
 }
 
 
@@ -27,10 +24,7 @@ function renderLicenseLink(license) {
     BSD: 'https://opensource.org/licenses/BSD-3-Clause',
     None: ''
   };
-  if (!license) {
-    return '';
-  }
-  return licenses[license];
+  return licenses[license] || '';
 }
 
 // TODO: Create a function that returns the license section of README
@@ -58,8 +52,9 @@ function generateMarkdown(data) {
   // }
   return (`${renderLicenseBadge(data.license)}<br>
 <h1 align="center">${data.title}</h1><br> 
+
 ### Description
-### ${data.description}
+${data.description}
 ### Table of Contents
 
 
