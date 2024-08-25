@@ -4,10 +4,10 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   const licenses = { 
-    MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
-    Apache: '[![License: Apache](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
-    GPL: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
-    BSD: '[![License: BSD](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
+    MIT: '[![license: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+    Apache: '[![license: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
+    GPL: '[![license: GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
+    BSD: '[![license: BSD3](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
     None: ''
   }; 
   return licenses[license] || '';
@@ -29,34 +29,43 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  const licenses = { 
+    MIT: 'MIT',
+    Apache: 'Apache-2.0',
+    GPL: 'GPLv3',
+    BSD: 'BSD3',
+    None: ''
+  };
+  return licenses[license] || '';
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  // let tableOfContents = '';
+  let tableOfContents = '';
   
-  // if (data.toc.includes('Installation')) {
-  //     tableOfContents += '- [Installation](#installation)\n';
-  // }
-  // if (data.toc.includes('Usage')){
-  //     tableOfContents += '- [Usage](#usage)\n';
-  // }
-  // if (data.toc.includes('Contributing')) {
-  //     tableOfContents += '- [Contributing](#contributing)\n';
-  // }
-  // if (data.toc.includes('Tests')) {
-  //     tableOfContents += '- [Tests](#tests)\n';
-  // }
-  // if (data.toc.includes('License')) {
-  //     tableOfContents += '- [License](#license)\n';
-  // }
+  if (data.toc.includes('Installation')) {
+      tableOfContents += '- [Installation](#installation)\n';
+  
+  if (data.toc.includes('Usage')){
+       tableOfContents += '- [Usage](#usage)\n';
+   }
+  if (data.toc.includes('Contributing')) {
+      tableOfContents += '- [Contributing](#contributing)\n';
+  }
+  if (data.toc.includes('Tests')) {
+      tableOfContents += '- [Tests](#tests)\n';
+  }
+  if (data.toc.includes('License')) {
+      tableOfContents += '- [License](#license)\n';
+  }
   return (`${renderLicenseBadge(data.license)}<br>
 <h1 align="center">${data.title}</h1><br> 
 
 ### Description
 ${data.description}
 ### Table of Contents
-
+${tableOfContents}
 
 ### Installation
 ${data.installation}
@@ -67,7 +76,8 @@ ${data.usage}
 ${data.contributing}
 
 ### License
-${renderLicenseLink(data.license)}<br>
+${renderLicenseSection(data.license)}<br>
+${renderLicenseLink(data.license)}
 
 ### Questions
 If you have any questions, please visit my GitHub profile or email me.
@@ -83,6 +93,6 @@ X-Screenshot: Purpose and Function
 - x-screencastify`
   );
 }
-
+}
 export default generateMarkdown;
 
