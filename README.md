@@ -1,8 +1,8 @@
-[![license: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)<br>
-<h1 align="center">README Generator</h1><br> 
+[![license: BSD3](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)<br>
+<h1 align="center">README GENERATOR</h1><br> 
 
 ### Description
-User answers questions to generate readme file.
+This project is a CLI tool that automatically generates a README.md file
 ### Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -12,26 +12,26 @@ User answers questions to generate readme file.
 
 
 ### Installation
-No installaton required.
+Ensure you have node.js install
  
 ### Usage
-usage
-### Contribution Guidelines
-Google, Ai, node js documentations
-
+You will be asked a series of questioins.
+### Contributing
+You can contribute. Make a clone and create a fork. creat abranc
+### Tests
+Test included in test folder.
 ### License
-MIT<br>
-https://opensource.org/licenses/MIT
+BSD3<br>
+https://opensource.org/licenses/BSD-3-Clause
 
 ### Questions
 If you have any questions, please visit my GitHub profile or email me.
--  GitHub profile:Plutarch1971<br>
--  Email: matthew@gmail.com<br>
+-  GitHub profile:Plutarch19781<br>
+-  Email: matthew@company.com<br>
 
 ### Screenshots
-X-Screenshot: Purpose and Function
-    
-![Alt text](assets/screenshot/screenshot.png)
+  
+![Alt text](./assets/images/screenshot1.png?raw=true "Screenshot 1")
   
 ### Application Video
 - x-screencastify

@@ -72,9 +72,10 @@ ${data.installation}
  
 ### Usage
 ${data.usage}
-### Contribution Guidelines
+### Contributing
 ${data.contributing}
-
+### Tests
+${data.tests}
 ### License
 ${renderLicenseSection(data.license)}<br>
 ${renderLicenseLink(data.license)}
@@ -85,9 +86,8 @@ If you have any questions, please visit my GitHub profile or email me.
 -  Email: ${data.email}<br>
 
 ### Screenshots
-X-Screenshot: Purpose and Function
-    
-![Alt text](assets/screenshot/screenshot.png)
+  
+![Alt text](./assets/images/screenshot1.png?raw=true "Screenshot 1")
   
 ### Application Video
 - x-screencastify`
