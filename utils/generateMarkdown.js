@@ -72,9 +72,11 @@ ${data.installation}
  
 ### Usage
 ${data.usage}
-### Contribution Guidelines
+### Contributing
 ${data.contributing}
 
+### Tests
+${data.tests}
 ### License
 ${renderLicenseSection(data.license)}<br>
 ${renderLicenseLink(data.license)}
